@@ -71,8 +71,8 @@ public class MazeDisplayer extends Canvas {
                 }
             }
             //Draw Character
-            //gc.setFill(Color.RED);
-            //gc.fillOval(characterPositionColumn * cellHeight, characterPositionRow * cellWidth, cellHeight, cellWidth);
+            gc.setFill(Color.RED);
+            gc.fillOval(characterPositionColumn * cellHeight, characterPositionRow * cellWidth, cellHeight, cellWidth);
             //  gc.drawImage(characterImage, characterPositionColumn * cellHeight, characterPositionRow * cellWidth, cellHeight, cellWidth);
 
         }

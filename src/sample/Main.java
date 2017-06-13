@@ -10,6 +10,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        ViewModel.ViewModel.startAllServers();
         Parent root = FXMLLoader.load(getClass().getResource("../View/MyView.fxml"));
         primaryStage.setTitle("daniel homo");
         primaryStage.setScene(new Scene(root, 600, 450));

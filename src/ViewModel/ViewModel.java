@@ -2,6 +2,7 @@ package ViewModel;
 
 import Model.IModel;
 import Model.MyModel;
+import Server.*;
 import View.MazeDisplayer;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
@@ -30,6 +31,10 @@ public class ViewModel {
         this.mazeDisplayer.setMaze(model.generate(rows,columns).mainBoard);
     }
 
+
+
+
+
     private void showAlert(String alertMessage) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setContentText(alertMessage);
@@ -39,7 +44,16 @@ public class ViewModel {
     public void reFresh() {
         this.mazeDisplayer.reFresh(center.getHeight(), center.getWidth());
     }
+
+
+    public static void startAllServers(){
+        Server mazeGeneratingServer = new Server(5400, 1000, new ServerStrategyGenerateMaze());
+        Server solveSearchProblemServer = new Server(5401, 1000, new ServerStrategySolveSearchProblem());
+        solveSearchProblemServer.start();
+        mazeGeneratingServer.start();
+    }
 }
+
 
 /*
     public void openFile() {
